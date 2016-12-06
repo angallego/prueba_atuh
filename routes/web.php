@@ -21,11 +21,8 @@ Route::group(['middleware' => 'web'] , function(){
 
     Route::get('/home', 'HomeController@index');
 
-
-
-
-
 });
+
 Route::group(['prefix' => 'admin'], function(){
     // Authentication Routes...
     Route::get('login', 'Admin\Auth\LoginController@showLoginForm')->name('admin.login');
@@ -33,8 +30,8 @@ Route::group(['prefix' => 'admin'], function(){
     Route::post('logout', 'Admin\Auth\LoginController@logout')->name('logout');
 
     // Registration Routes...
-    Route::get('register', 'Admin\Auth\RegisterController@showRegistrationForm')->name('register');
-    Route::post('register', 'Admin\Auth\RegisterController@register');
+    Route::get('register', 'Admin\Auth\RegisterController@showRegistrationForm')->name('admin.register');
+    Route::post('register', 'Admin\Auth\RegisterController@register')->name('admin.register');
 
     // Password Reset Routes...
     Route::get('password/reset', 'Admin\Auth\ForgotPasswordController@showLinkRequestForm');
@@ -42,5 +39,4 @@ Route::group(['prefix' => 'admin'], function(){
     Route::get('password/reset/{token}', 'Admin\Auth\ResetPasswordController@showResetForm');
     Route::post('password/reset', 'Admin\Auth\ResetPasswordController@reset');
 
-    Route::get('area', 'Admin\Auth\LoginController@secret')->name('admin.area');
 });
