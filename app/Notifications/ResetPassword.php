@@ -11,14 +11,17 @@ class ResetPassword extends Notification
 {
     use Queueable;
 
+
+    public $token;
+
     /**
     * Create a new notification instance.
     *
     * @return void
     */
-    public function __construct()
+    public function __construct($token)
     {
-        //
+        $this->token = $token;
     }
 
     /**
@@ -41,9 +44,11 @@ class ResetPassword extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
+        ->view('notifications.reset.mailer')
+        ->greeting('Hola ADMIN!')
         ->subject('Notification Subject')
         ->line('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam')
-        ->action('Notification Action', 'https://laravel.com')
+        ->action('Reset Password', route('admin.showresetform', $this->token))
         ->line('Thank you for using our application!');
     }
 

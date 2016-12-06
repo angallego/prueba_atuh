@@ -17,9 +17,16 @@ class Reset extends Notification
     *
     * @return void
     */
-    public function __construct()
+    public $token;
+
+    /**
+    * Create a new notification instance.
+    *
+    * @return void
+    */
+    public function __construct($token)
     {
-        //
+        $this->token = $token;
     }
 
     /**
@@ -43,10 +50,10 @@ class Reset extends Notification
     {
         return (new MailMessage)
             ->view('notifications.reset.mailer')
-            ->greeting('Hola!')
+            ->greeting('Hola USER!')
             ->subject('Notification Subject')
             ->line('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam')
-            ->action('Notification Action', 'https://laravel.com')
+            ->action('Reset Password', url('password/reset', $this->token))
             ->line('Thank you for using our application!');
         }
 

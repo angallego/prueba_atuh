@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "2a92a40cc27b8c4244f48ac297e18841",
-    "content-hash": "6d03ff14f2d83b23557bb6809702da36",
+    "hash": "27fe305e63af060b2dbf4e5df06ad56e",
+    "content-hash": "40dbace49f04c8f866f5a94c10a47e72",
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
@@ -60,6 +60,52 @@
                 "webprofiler"
             ],
             "time": "2016-09-15 14:05:56"
+        },
+        {
+            "name": "caffeinated/themes",
+            "version": "v3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/caffeinated/themes.git",
+                "reference": "69f0211ac18756bececdab73d342204a607a5806"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/caffeinated/themes/zipball/69f0211ac18756bececdab73d342204a607a5806",
+                "reference": "69f0211ac18756bececdab73d342204a607a5806",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/config": "5.3.*",
+                "illuminate/filesystem": "5.3.*",
+                "illuminate/support": "5.3.*",
+                "illuminate/view": "5.3.*",
+                "php": ">=5.6.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Caffeinated\\Themes\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Shea Lewis",
+                    "email": "shea.lewis89@gmail.com"
+                }
+            ],
+            "description": "Laravel 5 Themes",
+            "keywords": [
+                "blade",
+                "caffeinated",
+                "laravel",
+                "themes"
+            ],
+            "time": "2016-08-23 23:20:54"
         },
         {
             "name": "classpreloader/classpreloader",

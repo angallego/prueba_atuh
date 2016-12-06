@@ -1,3 +1,4 @@
+<?php
 
 if (! empty($greeting)) {
     echo $greeting, "\n\n";
